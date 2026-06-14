@@ -21,8 +21,8 @@ public class GTMaterialItemHot extends GTMaterialItem {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(TextFormatting.RED + I18n.format("Hot stuff coming through!"));
-		tooltip.add(TextFormatting.YELLOW + I18n.format("Can be handled safely wearing a full Hazmat or Quantum Suit"));
+		tooltip.add(TextFormatting.RED + I18n.format("tooltip.gtclassic.itemhot0"));
+		tooltip.add(TextFormatting.YELLOW + I18n.format("tooltip.gtclassic.itemhot1"));
 	}
 
 	/**

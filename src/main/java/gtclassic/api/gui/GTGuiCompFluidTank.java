@@ -6,10 +6,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
+import gtclassic.common.GTLang;
 import ic2.core.fluid.IC2Tank;
 import ic2.core.inventory.gui.GuiIC2;
 import ic2.core.inventory.gui.components.GuiComponent;
 import ic2.core.platform.registry.Ic2GuiComp;
+import net.minecraft.client.resources.I18n;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -30,7 +32,7 @@ public class GTGuiCompFluidTank extends GuiComponent {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void drawFrontground(GuiIC2 gui, int mouseX, int mouseY) {
-		gui.drawString("Fluid Amount:", 11, 20, Color.cyan.hashCode());
+		gui.drawString(I18n.format("tooltip.gtclassic.fluid_tank_amount"), 11, 20, Color.cyan.hashCode());
 		int stored = this.tank.getFluidAmount();
 		gui.drawString("" + NumberFormat.getNumberInstance(Locale.US).format(stored), 11, 30, Color.cyan.hashCode());
 	}

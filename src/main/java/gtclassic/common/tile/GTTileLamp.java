@@ -11,6 +11,7 @@ import ic2.core.IC2;
 import ic2.core.util.misc.StackUtil;
 import ic2.core.util.obj.IClickable;
 import net.minecraft.block.Block;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
@@ -135,7 +136,7 @@ public class GTTileLamp extends GTTileBaseRecolorableTile implements ITickable, 
 			this.inverted = !this.inverted;
 			this.shouldUpdate = true;
 			if (this.isSimulating()) {
-				String msg = this.inverted ? "Inverted" : "Not Inverted";
+				String msg = this.inverted ? I18n.format("tooltip.gtclassic.lamp.inverted") : I18n.format("tooltip.gtclassic.lamp.not_inverted");
 				IC2.platform.messagePlayer(player, msg);
 			}
 			player.playSound(SoundEvents.UI_BUTTON_CLICK, 1.0F, 1.0F);

@@ -58,13 +58,13 @@ public class GTItemFluidTube extends Item {
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		tooltip.add(GTHelperFluid.getFluidName(stack));
 		if (GTHelperFluid.isFluidGas(stack)) {
-			tooltip.add(TextFormatting.GREEN + I18n.format("Gaseous"));
+			tooltip.add(TextFormatting.GREEN + I18n.format("tooltip.gtclassic.fluid.gaseous"));
 		}
 		if (GTHelperFluid.isFluidPlaceable(stack)) {
-			tooltip.add(TextFormatting.YELLOW + I18n.format("Can be placed in world"));
+			tooltip.add(TextFormatting.YELLOW + I18n.format("tooltip.gtclassic.fluid.placeable"));
 		}
 		if (GTHelperFluid.isFluidBurnable(stack)) {
-			tooltip.add(TextFormatting.RED + I18n.format("Can be burned as liquid fuel"));
+			tooltip.add(TextFormatting.RED + I18n.format("tooltip.gtclassic.fluid.burnable"));
 		}
 	}
 

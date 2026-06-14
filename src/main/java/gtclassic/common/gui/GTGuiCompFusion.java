@@ -10,6 +10,7 @@ import gtclassic.common.tile.multi.GTTileMultiFusionReactor;
 import ic2.core.inventory.gui.GuiIC2;
 import ic2.core.inventory.gui.components.GuiComponent;
 import ic2.core.platform.registry.Ic2GuiComp;
+import net.minecraft.client.resources.I18n;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -34,10 +35,10 @@ public class GTGuiCompFusion extends GuiComponent {
 		if (progress > 100) {
 			progress = 100;
 		}
-		gui.drawString("EU: "
+		gui.drawString(I18n.format("tooltip.gtclassic.eu")
 				+ NumberFormat.getNumberInstance(Locale.US).format(this.block.energy), 10, 7, Color.cyan.hashCode());
-		gui.drawString("Coils: " + this.block.status, 10, 17, Color.cyan.hashCode());
-		gui.drawString("Progress: " + Math.round(progress) + "%", 10, 27, Color.cyan.hashCode());
+		gui.drawString(I18n.format("tooltip.gtclassic.coils") + this.block.status, 10, 17, Color.cyan.hashCode());
+		gui.drawString(I18n.format("tooltip.gtclassic.progress") + Math.round(progress) + "%", 10, 27, Color.cyan.hashCode());
 	}
 
 	@Override
