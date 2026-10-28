@@ -8,6 +8,7 @@ import gtclassic.common.tile.GTTileQuantumChest;
 import ic2.core.inventory.gui.GuiIC2;
 import ic2.core.inventory.gui.components.GuiComponent;
 import ic2.core.platform.registry.Ic2GuiComp;
+import net.minecraft.client.resources.I18n;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -28,7 +29,7 @@ public class GTGuiCompQuantumChest extends GuiComponent {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void drawFrontground(GuiIC2 gui, int mouseX, int mouseY) {
-		gui.drawString("Items:", 11, 20, Color.cyan.hashCode());
+		gui.drawString(I18n.format("tooltip.gtclassic.items"), 11, 20, Color.cyan.hashCode());
 		int stored = this.block.getQuantumCount();
 		gui.drawString("" + stored, 11, 30, Color.cyan.hashCode());
 	}

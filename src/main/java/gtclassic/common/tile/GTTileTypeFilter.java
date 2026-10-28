@@ -18,6 +18,7 @@ import ic2.core.inventory.management.InventoryHandler;
 import ic2.core.inventory.management.SlotType;
 import ic2.core.platform.lang.components.base.LocaleComp;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.relauncher.Side;
@@ -119,7 +120,7 @@ public class GTTileTypeFilter extends GTTileBufferBase implements IHasGui {
 	}
 
 	public static void addOreDictFilter(String entry) {
-		if (entry.length() > 0 && !entry.equals("empty") && !FILTER_LIST.contains(entry)) {
+		if (!entry.isEmpty() && !entry.equals("empty") && !FILTER_LIST.contains(entry)) {
 			FILTER_LIST.add(entry);
 		}
 	}

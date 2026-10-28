@@ -3,6 +3,7 @@ package gtclassic.common.container;
 import gtclassic.api.gui.GTGuiCompBasicString;
 import gtclassic.api.gui.GTGuiCompEnergyStorageBar;
 import gtclassic.api.gui.GTGuiCompProgressText;
+import gtclassic.common.GTLang;
 import gtclassic.common.tile.GTTileMatterFabricator;
 import ic2.core.inventory.container.ContainerTileComponent;
 import ic2.core.inventory.filters.CommonFilters;
@@ -30,7 +31,7 @@ public class GTContainerMatterFabricator extends ContainerTileComponent<GTTileMa
 						+ y * 18, CommonFilters.Anything));
 			}
 		}
-		this.addComponent(new GTGuiCompBasicString("Matter Fabricator", 48, 4));
+		this.addComponent(new GTGuiCompBasicString(GTLang.MATTER_FAB, 48, 4));
 		this.addComponent(new GTGuiCompProgressText(tile, 122, 41));
 		this.addComponent(new GTGuiCompEnergyStorageBar(tile, new Box2D(8, 60, 160, 5), new Vec2i(0, 251)));
 		this.addSlotToContainer(new SlotOutput(player.player, tile, 8, 128, 14));

@@ -42,8 +42,8 @@ public class GTGuiCompTypeFilter extends GTGuiCompBuffer {
 	public void onToolTipCollecting(GuiIC2 gui, int mouseX, int mouseY, List<String> tooltips) {
 		super.onToolTipCollecting(gui, mouseX, mouseY, tooltips);
 		if (GTHelperMath.within(mouseX, 34, 52) && GTHelperMath.within(mouseY, 20, 40)) {
-			tooltips.add(I18n.format("Current Filter: " + this.filterTile.getCurrentFilter() + " ("
-					+ this.filterTile.getCurrentIndex() + "/" + (GTTileTypeFilter.getFilterListSize() - 1) + ")"));
+			tooltips.add((I18n.format("tooltip.gtclassic.typefilter.current" ,this.filterTile.getCurrentFilter())) + " ("
+					+ this.filterTile.getCurrentIndex() + "/" + (GTTileTypeFilter.getFilterListSize() - 1) + ")");
 		}
 	}
 }

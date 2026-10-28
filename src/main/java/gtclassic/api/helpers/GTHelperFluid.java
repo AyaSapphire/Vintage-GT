@@ -8,6 +8,7 @@ import ic2.core.fluid.IC2Tank;
 import ic2.core.util.misc.FluidHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -178,9 +179,9 @@ public class GTHelperFluid {
 	public static String getFluidName(ItemStack stack) {
 		FluidStack fluid = FluidUtil.getFluidContained(stack);
 		if (fluid != null) {
-			return fluid.amount + "mB of " + fluid.getLocalizedName();
+			return I18n.format("tooltip.gtclassic.fluid.contained", fluid.amount, fluid.getLocalizedName());
 		}
-		return "Empty";
+		return I18n.format("tooltip.gtclassic.fluid.empty");
 	}
 
 	// helper for fluid containing itemstacks

@@ -75,13 +75,16 @@ public class GTItemSprayCan extends Item implements IStaticTexturedItem, IGTColo
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		NBTTagCompound nbt = StackUtil.getNbtData(stack);
+		String currentText;
 		if (nbt.hasKey(COLOR)) {
-			String name = EnumDyeColor.byDyeDamage(nbt.getInteger(COLOR)).getDyeColorName();
-			tooltip.add(I18n.format("Current: " + name.toUpperCase()));
+			EnumDyeColor dye = EnumDyeColor.byDyeDamage(nbt.getInteger(COLOR));
+			String dyeName = I18n.format("tooltip.gtclassic.color." + dye.getTranslationKey());
+			currentText = I18n.format("tooltip.gtclassic.spray_can", dyeName);
 		} else {
-			tooltip.add(I18n.format("Current: NONE"));
+			currentText = I18n.format("tooltip.gtclassic.spray_can.none");
 		}
-		tooltip.add(I18n.format("Sneak + click to change colors"));
+		tooltip.add(I18n.format(currentText));
+		tooltip.add(I18n.format("tooltip.gtclassic.spray_can.hint"));
 	}
 
 	@Override

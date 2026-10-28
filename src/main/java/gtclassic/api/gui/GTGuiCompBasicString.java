@@ -6,6 +6,7 @@ import java.util.List;
 
 import ic2.core.inventory.gui.GuiIC2;
 import ic2.core.inventory.gui.components.GuiComponent;
+import ic2.core.platform.lang.components.base.LocaleComp;
 import ic2.core.platform.registry.Ic2GuiComp;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -15,6 +16,7 @@ public class GTGuiCompBasicString extends GuiComponent {
 	private int posX;
 	private int posY;
 	private String title;
+	private LocaleComp titleComp;
 	private Color color;
 
 	public GTGuiCompBasicString(String title, Integer posX, Integer posY) {
@@ -26,6 +28,20 @@ public class GTGuiCompBasicString extends GuiComponent {
 		this.posX = posX;
 		this.posY = posY;
 		this.title = title;
+		this.titleComp = null;
+		this.color = color;
+	}
+
+	public GTGuiCompBasicString(LocaleComp title, Integer posX, Integer posY) {
+		this(title, posX, posY, Color.darkGray);
+	}
+
+	public GTGuiCompBasicString(LocaleComp title, Integer posX, Integer posY, Color color) {
+		super(Ic2GuiComp.nullBox);
+		this.posX = posX;
+		this.posY = posY;
+		this.title = null;
+		this.titleComp = title;
 		this.color = color;
 	}
 
@@ -37,6 +53,7 @@ public class GTGuiCompBasicString extends GuiComponent {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public void drawFrontground(GuiIC2 gui, int mouseX, int mouseY) {
-		gui.drawString(this.title, this.posX, this.posY, this.color.hashCode());
+		String text = this.title != null ? this.title : this.titleComp.getLocalized();
+		gui.drawString(text, this.posX, this.posY, this.color.hashCode());
 	}
 }

@@ -3,6 +3,7 @@ package gtclassic.common.container;
 import gtclassic.api.gui.GTGuiCompBasicString;
 import gtclassic.api.gui.GTGuiCompMachinePower;
 import gtclassic.api.gui.GTSlotUpgrade;
+import gtclassic.common.GTLang;
 import gtclassic.common.tile.GTTileDisassembler;
 import ic2.core.inventory.container.ContainerTileComponent;
 import ic2.core.inventory.gui.GuiIC2;
@@ -35,7 +36,7 @@ public class GTContainerDisassembler extends ContainerTileComponent<GTTileDisass
 		for (int i = 0; i < 4; ++i) {
 			this.addSlotToContainer(new GTSlotUpgrade(tile, 11 + i, 62 + (i * 18), 62));
 		}
-		this.addComponent(new GTGuiCompBasicString("Disassembler", 28, 5));
+		this.addComponent(new GTGuiCompBasicString(GTLang.DISASSEMBLER, 28, 5));
 		this.addComponent(new MachineProgressComp(tile, machineProgressBox, machineProgressPos));
 		this.addComponent(new GTGuiCompMachinePower(tile));
 		this.addPlayerInventory(player);

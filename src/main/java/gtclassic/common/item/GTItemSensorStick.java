@@ -34,22 +34,22 @@ public class GTItemSensorStick extends GTItemComponent {
 		NBTTagCompound nbt = StackUtil.getNbtData(stack);
 		if (nbt.getIntArray(POS).length == 4) {
 			//TODO make these static vars instead of generating new strings every call dummy
-			tooltip.add("Click a valid machine to install Sensor Stick");
-			tooltip.add("Sneak click to uninstall from machine");
-			tooltip.add(TextFormatting.DARK_GREEN+ "Valid machines:");
+			tooltip.add(I18n.format("tooltip.gtclassic.sensor_stick0"));
+			tooltip.add(I18n.format("tooltip.gtclassic.sensor_uninstall"));
+			tooltip.add(TextFormatting.DARK_GREEN+ I18n.format("tooltip.gtclassic.sensor_machines"));
 			tooltip.add(TextFormatting.DARK_AQUA+ I18n.format("tile.gtclassic.energytransmitter.name"));
 			tooltip.add(TextFormatting.DARK_AQUA+ I18n.format("tile.gtclassic.tesseractslave.name"));
 			tooltip.add(TextFormatting.DARK_AQUA+ I18n.format("tile.gtclassic.displayscreen.name"));
 			tooltip.add(TextFormatting.DARK_AQUA+ I18n.format("tile.gtclassic.redstonetransmitter.name"));
 			int[] pos = nbt.getIntArray(POS);
-			tooltip.add(TextFormatting.YELLOW + I18n.format("Last Scanned: "));
+			tooltip.add(TextFormatting.YELLOW + I18n.format(getTranslationKey().replace("item", "tooltip") + "1"));
 			if (nbt.getString(BLOCK) != null) {
 				tooltip.add(TextFormatting.BLUE + I18n.format(nbt.getString(BLOCK)));
 			}
-			tooltip.add(TextFormatting.BLUE + I18n.format("X: " + pos[0] + " Y: " + pos[1] + " Z: " + pos[2]));
-			tooltip.add(TextFormatting.BLUE + I18n.format("Dimension: " + pos[3]));
+			tooltip.add(TextFormatting.BLUE + I18n.format(getTranslationKey().replace("item", "tooltip") + "2", pos[0], pos[1], pos[2]));
+			tooltip.add(TextFormatting.BLUE + I18n.format(getTranslationKey().replace("item","tooltip") + "3", pos[3]));
 		} else {
-			tooltip.add("Click a block to set coordinates to internal memory");
+			tooltip.add(I18n.format(getTranslationKey().replace("item", "tooltip") + "4"));
 		}
 	}
 

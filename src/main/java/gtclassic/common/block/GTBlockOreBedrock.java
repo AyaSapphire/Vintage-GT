@@ -31,7 +31,7 @@ public class GTBlockOreBedrock extends GTBlockBaseOre {
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(I18n.format("Contains: " + GTBedrockOreHandler.getResource(this).getDisplayName()));
+		tooltip.add(I18n.format("tooltip.gtclassic.contains",  GTBedrockOreHandler.getResource(this).getDisplayName()));
 	}
 
 	@Override

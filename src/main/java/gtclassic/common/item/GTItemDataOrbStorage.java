@@ -26,19 +26,19 @@ public class GTItemDataOrbStorage extends GTItemComponent {
 		NBTTagCompound nbt = StackUtil.getNbtData(stack);
 		NBTTagList list = nbt.getTagList("Items", 10);
 		if (list.isEmpty()) {
-			tooltip.add(I18n.format("No Data Stored... How did you get this?"));
+			tooltip.add(I18n.format("tooltip.gtclassic.dataorbstorage.empty"));
 			return;
 		}
 		for (int i = 0; i < list.tagCount(); ++i) {
 			if (i < 5) {
 				NBTTagCompound data = list.getCompoundTagAt(i);
 				ItemStack contained = new ItemStack(data);
-				tooltip.add(I18n.format(contained.getDisplayName() + " x" + contained.getCount()));
+				tooltip.add(I18n.format("tooltip.gtclassic.dataorbstorage.entry" ,contained.getDisplayName() ,contained.getCount()));
 			}
 		}
 		int remaining = list.tagCount() - 5;
 		if (remaining > 0) {
-			tooltip.add(TextFormatting.ITALIC + I18n.format("and " + remaining + " more..."));
+			tooltip.add(TextFormatting.ITALIC + I18n.format("tooltip.gtclassic.dataorbstorage.more", remaining));
 		}
 	}
 

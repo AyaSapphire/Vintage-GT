@@ -6,6 +6,7 @@ import javax.annotation.Nullable;
 
 import gtclassic.api.gui.GTGuiCompBasicString;
 import gtclassic.api.helpers.GTHelperStack;
+import gtclassic.common.GTLang;
 import gtclassic.common.gui.GTGuiCompUUMAssembler;
 import gtclassic.common.tile.GTTileUUMAssembler;
 import ic2.core.inventory.container.ContainerTileComponent;
@@ -46,7 +47,7 @@ public class GTContainerUUMAssembler extends ContainerTileComponent<GTTileUUMAss
 		this.addSlotToContainer(new SlotCustom(tile, 12, 152, 5, CommonFilters.uuMatter));
 		// Result/Output Slot - 13
 		this.addSlotToContainer(new SlotOutput(player.player, tile, 13, 152, 41));
-		this.addComponent(new GTGuiCompBasicString("UUM-Assembler", 12, 8, Color.cyan));
+		this.addComponent(new GTGuiCompBasicString(GTLang.UUM_ASSEMBLER, 12, 8, Color.cyan));
 		this.addComponent(new GTGuiCompUUMAssembler(tile));
 		this.addPlayerInventory(player);
 	}

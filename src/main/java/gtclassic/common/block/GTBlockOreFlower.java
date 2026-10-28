@@ -29,7 +29,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class GTBlockOreFlower extends GTBlockBase implements ICustomModeledBlock {
 
-	static final String TOOLTIP = "Indicates the presence of a bedrock ore deposit nearby";
 	String name;
 	int id;
 
@@ -51,7 +50,7 @@ public class GTBlockOreFlower extends GTBlockBase implements ICustomModeledBlock
 
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		tooltip.add(I18n.format(TOOLTIP));
+		tooltip.add(I18n.format(getTranslationKey().replace("tile", "tooltip")));
 	}
 
 	@SideOnly(Side.CLIENT)

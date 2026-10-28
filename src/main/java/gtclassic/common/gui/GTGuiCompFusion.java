@@ -10,6 +10,7 @@ import gtclassic.common.tile.multi.GTTileMultiFusionReactor;
 import ic2.core.inventory.gui.GuiIC2;
 import ic2.core.inventory.gui.components.GuiComponent;
 import ic2.core.platform.registry.Ic2GuiComp;
+import net.minecraft.client.resources.I18n;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -37,11 +38,11 @@ public class GTGuiCompFusion extends GuiComponent {
 		gui.drawString("EU:", 10, 8, Color.cyan.hashCode());
 		gui.drawString(NumberFormat.getNumberInstance(Locale.US).format(this.block.energy), 25, 8, this.block.energy > 0 ? Color.cyan.hashCode(): Color.red.hashCode());
 		Boolean struct = this.block.lastState;
-		gui.drawString("Multiblock: ", 10, 18, Color.cyan.hashCode());
-		gui.drawString(struct ? "Correct" : "Incorrect", 10, 28, struct ? Color.green.hashCode() : Color.red.hashCode());
-		gui.drawString("Progress: ", 10, 38, Color.cyan.hashCode());
+		gui.drawString(I18n.format("tooltip.gtclassic.multiblock"), 10, 18, Color.cyan.hashCode());
+		gui.drawString(I18n.format(struct ? "tooltip.gtclassic.correct" : "tooltip.gtclassic.incorrect"), 10, 28, struct ? Color.green.hashCode() : Color.red.hashCode());
+		gui.drawString(I18n.format("tooltip.gtclassic.progress"), 10, 38, Color.cyan.hashCode());
 		gui.drawString(Math.round(progress) + "%", 61, 38, Color.cyan.hashCode());
-		gui.drawString("EU Out:", 10, 48, Color.cyan.hashCode());
+		gui.drawString(I18n.format("tooltip.gtclassic.eu_out"), 10, 48, Color.cyan.hashCode());
 		gui.drawString(NumberFormat.getNumberInstance(Locale.US).format(this.block.energyOut), 10, 58, Color.cyan.hashCode());
 	}
 
