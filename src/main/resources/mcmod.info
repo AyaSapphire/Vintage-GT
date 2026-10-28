@@ -1,16 +1,12 @@
-[
-{
-  "modid": "gtclassic",
-  "name": "GregTech Classic",
-  "description": "Gregtech for IC2 Classic on 1.12.2",
-  "version": "1.2.2",
-  "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["e99999, Trinsdar, Rongmario"],
-  "credits": "Speiger for making IC2 Classic, Gregorious-T for making the GT, Muramasa for some help at the start.",
-  "logoFile": "icon.png",
-  "screenshots": [],
-  "dependencies": []
-}
-]
+[{
+	"modid": "${mod_id}",
+	"name": "${mod_name}",
+	"version": "${mod_version}",
+	"mcversion": "1.12.2",
+	"description": "${mod_description}",
+	"authorList": ["${mod_authors}"],
+	"credits": "${mod_credits}",
+	"url": "${mod_url}",
+	"updateJSON": "${mod_update_json}",
+	"logoFile": "${mod_logo_path}"
+}]

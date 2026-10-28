@@ -57,9 +57,9 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @Mod(modid = GTMod.MODID, name = GTMod.MODNAME, version = GTMod.MODVERSION, dependencies = GTMod.DEPENDS, useMetadata = true)
 public class GTMod {
 
-	public static final String MODID = "gtclassic";
-	public static final String MODNAME = "GregTech Classic";
-	public static final String MODVERSION = "1.2.2";
+	public static final String MODID = Tags.MOD_ID;
+	public static final String MODNAME = Tags.MOD_NAME;
+	public static final String MODVERSION = Tags.VERSION;
 	public static final String DEPENDS = "required-after:ic2;required-after:ic2-classic-spmod;before:gtc_expansion@[0.3.2,);after:twilightforest@[3.9.984,)";
 	public static final CreativeTabs creativeTabGT = new GTCreativeTab(MODID);
 	@SidedProxy(clientSide = MODID + ".common.proxy.GTProxyClient", serverSide = MODID + ".common.proxy.GTProxyServer")
